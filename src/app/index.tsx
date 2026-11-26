@@ -1,53 +1,42 @@
-import { useState } from 'react';
-import { View, Text, Button } from 'react-native';
-import Contador from '../components/contador';
-import { useRouter } from 'expo-router';
+
+import { View, Text, Button, StyleSheet } from "react-native";
+import { useRouter } from "expo-router";
 
 export default function Index() {
-  const [quantidade, setQuantidade] = useState(0);
   const router = useRouter();
 
-  function Botao(){
-    router.navigate('/botao');
-  }
-  function exercio2(){
-    router.navigate('/exercio2')
-  }
-
-  
-
   return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-
-      <Text>Controle de Pessoas</Text>
-
-      <Contador
-        titulo="Pessoas na sala"
-        quantidade={quantidade}
-      />
+    <View style={styles.container}>
+      <Text style={styles.titulo}>Menu Principal</Text>
 
       <Button
-        title="Entrou"
-        onPress={() => setQuantidade(quantidade + 1)}
+        title="Tela de Vagas"
+        onPress={() => router.push("/vaga")}
       />
+
+      <View style={styles.espaco} />
 
       <Button
-        title="Saiu"
-        onPress={() => {
-          if (quantidade > 0) {
-            setQuantidade(quantidade - 1);
-          }
-        }}
+        title="Tela de Senha"
+        onPress={() => router.push("/senha")}
       />
-
-        <Button onPress={Botao}
-        title="tela2"
-      />
-      <Button onPress={exercio2}
-      title= "tela3"
-/>
-
-
     </View>
   );
 }
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    justifyContent: "center",
+    padding: 20,
+  },
+  titulo: {
+    fontSize: 26,
+    textAlign: "center",
+    marginBottom: 30,
+    fontWeight: "bold",
+  },
+  espaco: {
+    marginTop: 20,
+  },
+});
