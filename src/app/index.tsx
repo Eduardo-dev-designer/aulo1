@@ -8,8 +8,13 @@ export default function Index() {
   const router = useRouter();
 
   function Botao(){
-    router.push('/botao');
+    router.navigate('/botao');
   }
+  function exercio2(){
+    router.navigate('/exercio2')
+  }
+
+  
 
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
@@ -38,6 +43,10 @@ export default function Index() {
         <Button onPress={Botao}
         title="tela2"
       />
+      <Button onPress={exercio2}
+      title= "tela3"
+/>
+
 
     </View>
   );

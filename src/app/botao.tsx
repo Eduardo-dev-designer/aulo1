@@ -5,8 +5,9 @@ import Produto from '../components/produto';
 export default function Index() {
   const [quantidade, setQuantidade] = useState(1);
 
-  const nome = 'Camiseta';
-  const preco = 50;
+  const nome = 'Playstation 7';
+  const preco = 5999.98;
+  const precopromo = true;
 
   return (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
@@ -17,6 +18,7 @@ export default function Index() {
         produto={nome}
         preco={preco}
         quantidade={quantidade}
+        precopromo={precopromo}
       />
 
       <Button
