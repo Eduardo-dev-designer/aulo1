@@ -87,3 +87,6 @@ const styles = StyleSheet.create({
     marginTop: 30,
   },
 });
+
+
+//rua lisboa,450 garibaldina, gravatai,94090710//
